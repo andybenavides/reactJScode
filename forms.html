@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+    var BasicForm = React.createClass({
+      getInitialState: function(){
+        return {value: 'Hello'};
+      },
+      handleChange: function(event){
+        this.setState({value: event.target.value.substr(0,10)});
+      },
+      render: function(){
+        return(
+        <div>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <p>The value variable is: {this.state.value}</p>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <BasicForm />,
+      document.getElementById('example')
+    );
+
+    </script>
+  </body>
+</html> 

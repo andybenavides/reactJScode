@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <title>scotch.io tutorial | Filtered List</title>
+  </head>
+  <body>
+    <div id="mount-point"></div>
+    <script type="text/babel">
+    
+      var FilteredList = React.createClass({
+        filterList: function(event){
+          var updatedList = this.state.initialItems;
+          updatedList = updatedList.filter(function(item){
+            return item.toLowerCase().search(
+              event.target.value.toLowerCase()) !== -1;
+          });
+          this.setState({items: updatedList});
+        },
+        getInitialState: function(){
+          return {
+            intialItems: [
+              "Apples",
+              "Broccoli",
+              "Chicken",
+              "Duck",
+              "Eggs",
+              "Fish",
+              "Granola",
+              "Hash Browns",
+              "Milk",
+              "Cereal"
+            ],
+            items: []
+          }
+        },
+        componentWillMount: function(){
+          this.setState({items: this.state.initialItems})
+        },
+        render: function(){
+          return(
+            <div>
+              <input type="text" placeholder="Search" onChange={this.filterList}/>
+              <List items={this.state.items}/>
+            </div>
+          );
+        }
+      });
+
+      var List = React.createClass({
+        render: function(){
+          return(
+            <ul>
+              {
+                this.props.items.map(function(item) {
+                return <li>{item}</li>
+              })
+            }
+            </ul>
+          )
+        }
+      });
+
+      ReactDOM.render(<FilteredList/>, document.getElementById('mount-point'));
+    </script>
+  </body>
+</html>
+
+
+
+
+

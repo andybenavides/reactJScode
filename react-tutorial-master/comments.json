@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1388534400000,
+        "author": "Pete Hunt",
+        "text": "Hey there!"
+    },
+    {
+        "id": 1420070400002,
+        "author": "Cassie Cano",
+        "text": "React is *awesome*!"
+    },
+    {
+        "id": 1420070402001,
+        "author": "Allee Cano",
+        "text": "React is *freaking cool*!"
+    },
+    {
+        "id": 14201340405001,
+        "author": "Robert Rendon",
+        "text": "This is really an awesome framework to work with."
+    },
+    {
+        "id": 1466974922318,
+        "author": "Andy Benavides",
+        "text": "This is working with GOlang"
+    },
+    {
+        "id": 1466981235386,
+        "author": "Test",
+        "text": "Test"
+    }
+]
